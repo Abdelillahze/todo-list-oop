@@ -282,9 +282,9 @@ setInterval(() => {
   // done
   let tasksEls = document.querySelectorAll(".task").length;
   let finished = document.querySelectorAll(".finish").length;
-
-  done.style.width = `${(finished * 100) / tasksEls}%`;
-  donePer.innerHTML = `${(finished * 100) / tasksEls}% done`;
+  let result = (finished * 100) / tasksEls;
+  done.style.width = `${result == NaN ? result : 0}%`;
+  donePer.innerHTML = `${result == NaN ? result : 0}% done`;
 });
 
 // box

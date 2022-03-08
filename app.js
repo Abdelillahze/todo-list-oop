@@ -282,11 +282,11 @@ setInterval(() => {
   lengthEl.innerHTML = toDo.tasksCount;
 
   // done
-  let tasksEls = document.querySelectorAll(".task");
-  let finished = document.querySelectorAll(".finish");
+  let tasksEls = document.querySelectorAll(".task").length;
+  let finished = document.querySelectorAll(".finish").length;
 
-  done.style.width = `${(finished.length * 100) / tasksEls.length}%`;
-  donePer.innerHTML = `${(finished.length * 100) / tasksEls.length}% done`;
+  done.style.width = `${(finished * 100) / tasksEls}%`;
+  donePer.innerHTML = `${(finished * 100) / tasksEls}% done`;
 });
 
 // box

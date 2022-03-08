@@ -135,10 +135,22 @@ toDo.displayLocalStorage();
 
 // start the create funciton runner
 let addBtn = document.querySelector(".addButton");
-
+let input = document.querySelector(".add");
 addBtn.addEventListener("click", () => {
   toDo.addToLocalStorage();
   toDo.display();
+});
+
+console.log();
+
+input.addEventListener("keyup", (event) => {
+  if (
+    event.keyCode == 13 &&
+    input.value.trim() != "" &&
+    window.getComputedStyle(addBtn, null).display == "block"
+  ) {
+    addBtn.click();
+  }
 });
 
 // function generate id
@@ -205,6 +217,16 @@ function editEl(arr, eV) {
         addButton.style.display = "block";
         editButton.style.display = "none";
       };
+
+      input.addEventListener("keyup", (event) => {
+        if (
+          event.keyCode == 13 &&
+          input.value.trim() != "" &&
+          window.getComputedStyle(editButton, null).display == "block"
+        ) {
+          editButton.click();
+        }
+      });
     };
   }
 }
@@ -274,7 +296,9 @@ setInterval(() => {
     .toString()
     .slice(11, 15)}`;
 
-  timeEl.innerHTML = `${date.getHours()}:${date.getMinutes()}`;
+  timeEl.innerHTML = `${
+    date.getHours() < 10 ? "0" + date.getHours() : date.getHours()
+  }:${date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()}`;
   // length
   let lengthEl = document.querySelector(".length");
   lengthEl.innerHTML = toDo.tasksCount;
@@ -283,8 +307,13 @@ setInterval(() => {
   let tasksEls = document.querySelectorAll(".task").length;
   let finished = document.querySelectorAll(".finish").length;
   let result = (finished * 100) / tasksEls;
-  done.style.width = `${result == NaN ? result : 0}%`;
-  donePer.innerHTML = `${result == NaN ? result : 0}% done`;
+
+  if (isNaN(result)) {
+    result = 0;
+  }
+
+  done.style.width = `${result}%`;
+  donePer.innerHTML = `${result}% done`;
 });
 
 // box

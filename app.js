@@ -288,3 +288,19 @@ setInterval(() => {
   done.style.width = `${(finished.length * 100) / tasksEls.length}%`;
   donePer.innerHTML = `${(finished.length * 100) / tasksEls.length}% done`;
 });
+
+// box
+
+let li = document.querySelectorAll(".box ul li");
+
+li[0].addEventListener("click", () => {
+  toDo.clearAll();
+});
+
+li[1].addEventListener("click", () => {
+  toDo.onlyActive();
+});
+
+li[2].addEventListener("click", () => {
+  toDo.onlyFinished();
+});

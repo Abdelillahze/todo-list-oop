@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="master.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="background">
+      <div class="container">
+        <div class="text">
+          <h1>ToDo List</h1>
+        </div>
+        <div class="date">Sep 5, 2022</div>
+        <div class="time">
+          <span>22:45</span>
+          <div class="completion-percentage">100% done</div>
+        </div>
+        <div class="done"></div>
+      </div>
+      <img src="imgs/coding.jpg" alt="" />
+    </section>
+    <section class="main">
+      <div class="container">
+        <form action="">
+          <span>add :</span>
+          <input type="text" placeholder="Create new Task" class="add" />
+          <img src="imgs/plus.png" class="addButton" alt="" />
+          <img src="imgs/quill.png" class="editButtonTop" alt="" />
+        </form>
+        <div class="tasks">
+          <span>Tasks :</span>
+        </div>
+        <div class="box">
+          <span class="length">0</span>
+          <ul>
+            <li>Clear</li>
+            <li>Active</li>
+            <li>Finished</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <script src="app.js"></script>
+  </body>
+</html>

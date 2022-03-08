@@ -259,24 +259,22 @@ setInterval(() => {
   finished(ps);
 });
 
-// time
-
-let date = new Date();
-let dateEl = document.querySelector(".date");
-let timeEl = document.querySelector(".time span");
-
-dateEl.innerHTML = `${date.toString().slice(4, 10)}, ${date
-  .toString()
-  .slice(11, 15)}`;
-
-timeEl.innerHTML = `${date.getHours()}:${date.getMinutes()}`;
-
 // done
 
 let done = document.querySelector(".done");
 let donePer = document.querySelector(".completion-percentage");
 
 setInterval(() => {
+  //time
+  let date = new Date();
+  let dateEl = document.querySelector(".date");
+  let timeEl = document.querySelector(".time span");
+
+  dateEl.innerHTML = `${date.toString().slice(4, 10)}, ${date
+    .toString()
+    .slice(11, 15)}`;
+
+  timeEl.innerHTML = `${date.getHours()}:${date.getMinutes()}`;
   // length
   let lengthEl = document.querySelector(".length");
   lengthEl.innerHTML = toDo.tasksCount;

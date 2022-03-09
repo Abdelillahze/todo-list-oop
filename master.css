@@ -141,7 +141,7 @@ body {
   font-size: 13px;
 }
 
-form {
+.form {
   position: relative;
   background-color: #1b1e2b;
   width: 450px;
@@ -149,17 +149,17 @@ form {
   margin-top: 50px;
   border-radius: 5px;
   padding: 10px;
-  margin-bottoM: 50px;
+  margin-bottom: 50px;
 }
 
-form span {
+.form span {
   position: absolute;
   top: -25px;
   left: 0;
   color: #d4d1d1;
 }
 
-form input {
+.form input {
   outline: none;
   border: none;
   background-color: var(--section-color);
@@ -171,7 +171,7 @@ form input {
   color: white;
 }
 
-form img {
+.form img {
   position: absolute;
   width: 20px;
   cursor: pointer;
@@ -181,6 +181,10 @@ form img {
   right: 20px;
   -webkit-filter: grayscale(1) invert(1);
           filter: grayscale(1) invert(1);
+}
+
+.form .addButton {
+  display: block;
 }
 
 .tasks {
@@ -318,5 +322,17 @@ form img {
 .done {
   -webkit-transition: width .3s;
   transition: width .3s;
+}
+
+@media (max-width: 767px) {
+  .form {
+    width: 100%;
+  }
+  .tasks {
+    width: 100%;
+  }
+  .box {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=master.css.map */

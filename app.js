@@ -313,7 +313,7 @@ setInterval(() => {
   }
 
   done.style.width = `${result}%`;
-  donePer.innerHTML = `${result}% done`;
+  donePer.innerHTML = `${result.toFixed(2)}% done`;
 });
 
 // box

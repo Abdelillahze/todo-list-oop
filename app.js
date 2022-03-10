@@ -124,6 +124,10 @@ class ToDoList {
     tasksEls.forEach((e) => (e.style.display = "none"));
     finished.forEach((e) => (e.parentNode.style.display = "flex"));
   }
+  all() {
+    let tasksEls = document.querySelectorAll(".task");
+    tasksEls.forEach((e) => (e.style.display = "flex"));
+  }
 }
 
 // create ToDo
@@ -330,4 +334,10 @@ li[1].addEventListener("click", () => {
 
 li[2].addEventListener("click", () => {
   toDo.onlyFinished();
+});
+
+let all = document.querySelector(".all");
+
+all.addEventListener("click", () => {
+  toDo.all();
 });
